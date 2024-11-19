@@ -1,6 +1,24 @@
+<!-- Source: https://github.com/othneildrew/Best-README-Template/blob/main/BLANK_README.md -->
+<a id="readme-top"></a>
+
 # Geek Central Backend
 
 Backend portion of the website that stores the product information in mongodb using mongoose.
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+  </ol>
+</details>
 
 # requirements
 
@@ -13,10 +31,23 @@ Backend portion of the website that stores the product information in mongodb us
 
 ## Installation
 
-1. git clone https://github.com/SuperWebMonkey/Capstone-Geek-Central-Backend.git
-2. cd Capstone-Geek-Central-Backend
-3. npm install
-4. npm start dev
+1. Clone the repo 
+   ```git
+    git clone https://github.com/SuperWebMonkey/Capstone-Geek-Central-Backend.git
+   ```
+2. Go to the directory
+   ```sh
+   cd Capstone-Geek-Central-Backend
+   ```
+3. Install all packages
+   ```npm
+   npm install
+   ```
+4. Start the server
+   ```npm 
+   npm start dev
+   ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Features
 
@@ -50,3 +81,14 @@ Backend portion of the website that stores the product information in mongodb us
 - Mongoose
 - MongoDB
 - Express
+
+### Built With
+
+* [![React][React.js]][React-url]
+* [![JavaScript][javascript]]
+* [![MongoDB][mongodb]]
+* [![Mongoose][mongoose]]
+* [![Express][express]]
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

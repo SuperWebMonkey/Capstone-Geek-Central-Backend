@@ -4,6 +4,7 @@ import products from "../models/products.js";
 const router = express.Router();
 
 /**
+ *
  * GET all products
  * @description return an array of product objects
  *
@@ -18,6 +19,7 @@ router.get("/", async (req, res) => {
 });
 
 /**
+ *
  * GET a single product by ID in /products/:id
  * @description return a single chat by the id
  *
@@ -40,6 +42,7 @@ router.get("/:id", async (req, res, next) => {
 });
 
 /**
+ *
  * POST /products
  * @description create a new product
  *

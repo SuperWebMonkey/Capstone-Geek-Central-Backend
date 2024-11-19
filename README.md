@@ -9,11 +9,12 @@ Backend portion of the website that stores the product information in mongodb us
 3. Install express (npm i express)
 4. Install Mongoose (npm i mongoose)
 5. postman or vscode postman (highly recommended)
+6. install nodemon in your local environment (npm i --save-dev nodemon
 
 ## Installation
 
-1. git clone https://github.com/SuperWebMonkey/SBA-319-MongoDB-DB-App.git
-2. cd SBA-319-MongoDB-DB-App
+1. git clone https://github.com/SuperWebMonkey/Capstone-Geek-Central-Backend.git
+2. cd Capstone-Geek-Central-Backend
 3. npm install
 4. npm start dev
 
@@ -38,7 +39,7 @@ Backend portion of the website that stores the product information in mongodb us
 
 - localhost:3000 | home
 - localhost:3000/products | shows the entire product collection
-- localhost:3000/users/:id | Shows a specific product based on the id
+- localhost:3000/products/:id | Shows a specific product based on the id
 
 - GET localhost:3000/products | Retrieve all products
 - GET localhost:3000/products:id | Retrieve a specific product

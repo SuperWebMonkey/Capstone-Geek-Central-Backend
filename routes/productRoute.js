@@ -92,19 +92,61 @@ router.post("/", async (req, res, next) => {
 /**
  *
  * Put /products
- * @description modify a product
+ * @description modify/update a product by id
  *
  */
 router.put("/:id", async (req, res) => {
   try {
-    const product = await products.findById(req.params.id);
+    const { id } = req.params;
+    console.log("id", id);
+    const newUpdate = req.body;
+    console.log("body", newUpdate);
 
-    if (!product) {
+    const updatedProduct = await products.findByIdAndUpdate(id, newUpdate, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!updatedProduct) {
       return res.status(404).json({ message: "product not found" });
     }
-    res.status(200).json(product);
+
+    console.log("updated user", updatedUser);
+
+    res.json({
+      message: "User updated successfully",
+      product: updatedProduct,
+    });
   } catch (e) {
-    res.status(500).json({ message: "Error fetching the product", error: err });
+    console.error(e);
+    res.status(500).json({ message: "Server error. Update Failed" });
+  }
+});
+
+/**
+ *
+ * Delete /products
+ * @description Delete a product by id
+ *
+ */
+router.delete("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const removedProduct = await products.findByIdAndDelete(id);
+
+    if (!removedProduct) {
+      return res
+        .status(404)
+        .json({ message: "Product not found. No need to delete." });
+    }
+
+    res.json({
+      message: "Product deleted successfully",
+      removedProduct,
+    });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ message: "Server error" });
   }
 });
 

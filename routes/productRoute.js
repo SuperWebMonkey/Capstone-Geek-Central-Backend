@@ -134,6 +134,7 @@ router.delete("/:id", async (req, res) => {
     const { id } = req.params;
     const removedProduct = await products.findByIdAndDelete(id);
 
+    // If it's not there, send an error message
     if (!removedProduct) {
       return res
         .status(404)

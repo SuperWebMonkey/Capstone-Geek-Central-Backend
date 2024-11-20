@@ -27,6 +27,7 @@ app.use("/products", productRoute);
 // Main route
 app.get("/", async (req, res) => {
   await Seeds();
+  // await Conn();
   res.send("Welcome to the API");
 });
 

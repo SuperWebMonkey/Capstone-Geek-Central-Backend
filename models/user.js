@@ -1,3 +1,10 @@
+/**
+ *
+ * User Schema for login and registration
+ * Will be used for a future update after the course
+ *
+ */
+
 import mongoose from "mongoose";
 
 const userSchema = mongoose.Schema(

@@ -8,6 +8,11 @@ import ProductModel from "../models/products.js";
 //  Importing db connection
 import con from "./connect.js";
 
+/**
+ *
+ * @description Create a list of items and put them in mongodb
+ *
+ */
 const seed = async () => {
   await con();
 
@@ -79,7 +84,11 @@ const seed = async () => {
       },
     ];
 
-    console.log(items);
+    await ProductModel.deleteMany({});
+
+    const createdProducts = await ProductModel.create(items);
+
+    console.log("Products:", createdProducts);
   } catch (e) {
     console.log(e);
   } finally {

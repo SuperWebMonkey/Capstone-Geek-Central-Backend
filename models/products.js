@@ -1,6 +1,14 @@
+/**
+ *
+ * Product schema for products of the store
+ * Each product has a specific category
+ *
+ */
+
+import "dotenv/config";
 import mongoose from "mongoose";
 
-const productSchema = mongoose.Schema({
+const productSchema = new mongoose.Schema({
   title: { type: String, required: true, unique: true },
   price: {
     type: Number,
@@ -13,11 +21,15 @@ const productSchema = mongoose.Schema({
     required: true,
     enum: ["electronics", "movies", "anime"],
   },
+  // image: {
+  //   type: String,
+  //   default: 'https://example.com/default-image.jpg', // Default image URL
+  // },
 });
 
-productSchema.index({ title: 1 });
-productSchema.index({ price: 1 });
-productSchema.index({ description: 1 });
+productSchema.index({ title: 1 }, { unique: true }); // Create unique index for title
+// productSchema.index({ price: 1 });
+// productSchema.index({ description: 1 });
 productSchema.index({ category: 1 });
 
 productSchema.methods.getItems = function (obj) {

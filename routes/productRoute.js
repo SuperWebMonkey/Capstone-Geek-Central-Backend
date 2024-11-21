@@ -12,6 +12,7 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     const allProducts = await products.find();
+    // console.log(allProducts);
     res.json(allProducts);
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch products" });
@@ -26,10 +27,8 @@ router.get("/", async (req, res) => {
  */
 router.get("/:id", async (req, res, next) => {
   try {
-    // const { id } = req.params;
     const product = await products.findById(req.params.id);
-    // other method
-    // const product = await products.findById(req.params.id);
+    console.log(product);
 
     if (!product) {
       return res.status(404).json({ message: "product not found" });

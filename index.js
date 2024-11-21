@@ -24,10 +24,12 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use("/products", productRoute);
 
+// Connections
+await Seeds();
+await Conn();
+
 // Main route
 app.get("/", async (req, res) => {
-  await Seeds();
-  // await Conn();
   res.send("Welcome to the API");
 });
 
